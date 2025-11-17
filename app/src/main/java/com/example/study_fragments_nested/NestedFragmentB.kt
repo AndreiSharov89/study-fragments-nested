@@ -28,6 +28,7 @@ class NestedFragmentB : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.song.text = (requireActivity() as SongNameTransfer).getSongName()
         binding.button.setOnClickListener {
             parentFragmentManager.commit {
                 replace(R.id.fragment_child_container, NestedFragmentA())

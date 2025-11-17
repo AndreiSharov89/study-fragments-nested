@@ -10,6 +10,11 @@
     <TextView
         style="@style/InfoText"
         android:text="Это FragmentA :)" />
+    <TextView
+        style="@style/InfoText"
+        android:id="@+id/song"
+        android:text="" />
+
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragment_child_container"
