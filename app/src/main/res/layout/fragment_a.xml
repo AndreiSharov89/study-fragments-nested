@@ -9,17 +9,13 @@
 
     <TextView
         style="@style/InfoText"
+        android:id="@+id/text"
         android:text="Это FragmentA :)" />
-    <TextView
-        style="@style/InfoText"
-        android:id="@+id/song"
-        android:text="" />
 
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragment_child_container"
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:orientation="horizontal" />
 
 </LinearLayout>

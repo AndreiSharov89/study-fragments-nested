@@ -28,10 +28,11 @@ class NestedFragmentB : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.song.text = (requireActivity() as SongNameTransfer).getSongName()
+        binding.text.text = (requireActivity() as SongNameProvider).getSongName()
+            .plus(other = " | B")
         binding.button.setOnClickListener {
             parentFragmentManager.commit {
-                replace(R.id.fragment_child_container, NestedFragmentA())
+                (parentFragment as? SelectPage)?.navigateTo(page = 0)
             }
         }
     }

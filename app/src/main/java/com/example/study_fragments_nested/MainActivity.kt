@@ -6,8 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity(), SongNameTransfer {
-    val song: String = "swan lake"
+class MainActivity : AppCompatActivity(R.layout.activity_main), SongNameProvider {
+    val song: String = "Lumiere"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity(), SongNameTransfer {
         }
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, FragmentA.newInstance(song))
+                .add(R.id.fragment_container, FragmentA.newInstance(getSongName()))
                 .commit()
         }
     }
